@@ -1,0 +1,7 @@
+<launch>
+<node name="joystick" pkg="joy" type="joy_node" />
+<node name="RosAria" pkg="rosaria" type="RosAria" />
+<node name="steering" pkg="robopuppy" type="joy2drone_logi.py" respawn="true">
+	<remap from="cmd_vel" to="RosAria/cmd_vel" />
+</node>
+</launch>
